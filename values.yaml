@@ -1,0 +1,34 @@
+replicaCount: 2
+
+image:
+  repository: kochetovteam/fix
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecret: regcred
+
+service:
+  type: NodePort
+  port: 8080
+  nodePort: 30080
+
+serviceAccount:
+  create: true
+ingress:
+  enabled: false
+autoscaling:
+  enabled: false
+
+
+
+
+#dockerCredentials: |
+#  {
+#    "auths": {
+#      "docker.io": {
+#        "username": kochetovteam,
+#        "password": ,
+#        "email": kochetov.team@bk.ru
+#      }
+#    }
+#  }
